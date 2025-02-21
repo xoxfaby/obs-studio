@@ -1275,6 +1275,10 @@ static void try_hook(struct game_capture *gc)
 			return;
 		}
 
+		if (gc->active) {
+			stop_capture(gc);
+		}
+
 		if (!init_hook(gc)) {
 			stop_capture(gc);
 		}
